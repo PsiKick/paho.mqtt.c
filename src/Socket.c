@@ -185,9 +185,9 @@ int Socket_addSocket(int newSd)
 			ListAppend(s.clientsds, pnewSd, sizeof(newSd));
 			FD_SET(newSd, &(s.rset_saved));
 			s.maxfdp1 = max(s.maxfdp1, newSd + 1);
-			rc = Socket_setnonblocking(newSd);
+			/*rc = Socket_setnonblocking(newSd);
 			if (rc == SOCKET_ERROR)
-				Log(LOG_ERROR, -1, "addSocket: setnonblocking");
+				Log(LOG_ERROR, -1, "addSocket: setnonblocking");*/
 		}
 	}
 	else
