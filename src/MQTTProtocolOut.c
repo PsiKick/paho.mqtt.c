@@ -132,6 +132,8 @@ int MQTTProtocol_connect(const char* ip_address, Clients* aClient, int websocket
 						aClient->sslopts->verify, NULL, NULL);
 				if (rc == TCPSOCKET_INTERRUPTED)
 					aClient->connect_state = SSL_IN_PROGRESS; /* SSL connect called - wait for completion */
+			        else
+					rc = 0;
 			}
 			else
 				rc = SOCKET_ERROR;
